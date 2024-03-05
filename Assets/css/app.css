@@ -1,0 +1,27 @@
+body{
+    background-color: silver;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+header{
+    background-color: slategray;
+    line-height: 150%;
+    min-height: 120px;
+    color:  white;
+    text-shadow: 0 0 3px black;
+    text-align: center;
+    font-size: 200%;
+}
+
+footer{
+    background-color: black;
+    color: white;
+    font-size: 80%;
+    letter-spacing: 3px;
+    text-align: center;
+    padding: 10px;
+}
+
+main{
+    padding: 10px;
+}
