@@ -5,8 +5,7 @@ body{
 
 header{
     background-color: slategray;
-    line-height: 150%;
-    min-height: 120px;
+    padding: 20px;
     color:  white;
     text-shadow: 0 0 3px black;
     text-align: center;
@@ -24,4 +23,29 @@ footer{
 
 main{
     padding: 10px;
+    text-align: center;
+}
+
+.addingDiv{
+    display: flex;
+    justify-content: center;
+    padding-top: 18px;
+    background-color: white;
+}
+
+.addingDiv div{
+    margin-left: 1%;
+    margin-right: 1%;
+}
+
+.addNumber{
+    min-width: 100px;
+}
+
+.btn{
+    padding: 15px;
+}
+
+i{
+    font-size: 40px;
 }
