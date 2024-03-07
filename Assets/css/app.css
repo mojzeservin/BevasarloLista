@@ -19,6 +19,9 @@ footer{
     letter-spacing: 3px;
     text-align: center;
     padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
 
 main{
@@ -33,17 +36,22 @@ main{
     background-color: white;
 }
 
-.addingDiv div{
-    margin-left: 1%;
-    margin-right: 1%;
-}
-
 .addNumber{
     min-width: 100px;
 }
 
-.btn{
-    padding: 15px;
+.add{
+    padding-top: 0px;
+    height: 65px;
+}
+
+.form-select{
+    height: 60px;
+    width: 200px;
+}
+
+select{
+    margin-right: 15px;
 }
 
 i{

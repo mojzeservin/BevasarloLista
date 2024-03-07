@@ -17,30 +17,22 @@
     <main>
         <h1>Termék hozzáadása</h1>
         <div class="addingDiv">
-            <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Kategória
-                </button>
-                <ul class="dropdown-menu">
-                  <li></li>
-                </ul>
-            </div>
+            <select class="form-select" aria-label="Default select example">
+                <option selected>Kategória..</option>
+                <option ng-repeat="kategoria in kategoriak">{{kategoria}}</option>
+            </select>
 
-            <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Termék
-                </button>
-                <ul class="dropdown-menu">
-                  <li></li>
-                </ul>
-            </div>
+            <select class="form-select" aria-label="Default select example">
+                <option selected>Termék..</option>
+                <option></option>
+            </select>
 
-            <div class="form-floating mb-3">
+            <div class="form-floating mb-3 me-2">
                 <input style="min-width: 120px" type="number" class="form-control" id="mennyiseg" placeholder="">
                 <label for="mennyiseg">Mennyiség</label>
             </div>
 
-            <i class="bi bi-plus-square"></i>
+            <button type="button" class="btn add"><i class="bi bi-plus-square"></i></button>
         </div>
 
         <br>
