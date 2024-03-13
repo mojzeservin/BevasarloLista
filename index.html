@@ -34,17 +34,27 @@
         </div>
 
         <br>
+
+        <div class="btns">
+            <button class="btn btn-success saveBtn">Lista mentése</button>
+
+            <button class="btn btn-primary loadBtn">Mentett lista betöltése</button>
+    
+            <button class="btn btn-danger deleteBtn">Lista törlése</button>
+        </div>
+
+        <br>
         <h1>Termékek lista</h1>
 
         <table class="table">
             <thead>
                 <tr>
-                    <th>Kategória</th>
-                    <th>Termékek</th>
-                    <th>Mennyiség</th>
-                    <th>Egységár</th>
-                    <th>Összeg</th>
-                    <th>Műv.</th>
+                    <th width="25%">Kategória</th>
+                    <th width="25%">Termékek</th>
+                    <th width="5%">Mennyiség</th>
+                    <th width="15%">Egységár</th>
+                    <th width="15%">Összeg</th>
+                    <th width="15%">Műv.</th>
                 </tr>
             </thead>
             <tbody>
@@ -54,16 +64,16 @@
                     <td>{{currentTermek.mennyiseg}}</td>
                     <td>{{currentTermek.egysegar}}</td>
                     <td>{{currentTermek.egysegar * currentTermek.mennyiseg}}</td>
-                    <td>DeleteDtn ide</td>
+                    <td><i class="bi bi-pencil"></i><i class="bi bi-trash"></i></td>
                 </tr>
             </tbody>
         </table>
     </main>
 
-    <footer>
-        <button class="saveBtn">Mentés</button>
+<br>
 
-        <button class="deleteBtn">Lista törlése</button>
+    <footer>
+        <p>Összesen: {{arakOsszege}} Ft</p>
     </footer>
 
     <script src="Assets/js/angular.min.js"></script>

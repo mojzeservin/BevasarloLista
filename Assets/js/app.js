@@ -5,11 +5,19 @@ let termekSelect = document.querySelector("#termekSelect");
 let mennyisegUpDown = document.querySelector("#mennyisegUpDown");
 let addBtn = document.querySelector(".addBtn");
 
+let saveBtn = document.querySelector(".saveBtn");
+let loadBtn = document.querySelector(".loadBtn");
+let deleteBtn = document.querySelector(".deleteBtn");
+
 app.run(function($rootScope)
 {
     $rootScope.appTitle =  "Bevásárló lista";
 
     $rootScope.author = "MR - ME";
+
+    $rootScope.arakOsszege = 0;
+
+    mennyisegUpDown.value = 1;
 
     $rootScope.kategoriak = [];
 
@@ -80,6 +88,41 @@ app.run(function($rootScope)
             $rootScope.lista.push(termek);
     
             $rootScope.$apply();
+
+            kategoriaSelect.selectedIndex = 0;
+            termekSelect.selectedIndex = 0;
+            mennyisegUpDown.value = 1;
         }
+
+        Update();
     });
+
+    saveBtn.addEventListener("click", () => {
+        localStorage.removeItem("BevasarloLista");
+        localStorage.setItem("BevasarloLista", JSON.stringify($rootScope.lista));
+    });
+
+    loadBtn.addEventListener("click", () => {
+        $rootScope.lista = JSON.parse(localStorage.getItem("BevasarloLista"));
+
+        $rootScope.$apply();
+        Update();
+    });
+
+    deleteBtn.addEventListener("click", () => {
+        $rootScope.lista = [];
+        
+        $rootScope.$apply();
+        Update();
+    });
+
+    function Update(){
+        $rootScope.arakOsszege = 0;
+
+        $rootScope.lista.forEach(item => {
+            $rootScope.arakOsszege += item.mennyiseg * item.egysegar;
+        });
+
+        $rootScope.$apply();
+    }
 });

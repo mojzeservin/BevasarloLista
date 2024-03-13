@@ -18,10 +18,16 @@ footer{
     font-size: 80%;
     letter-spacing: 3px;
     text-align: center;
-    padding: 10px;
     position: fixed;
     bottom: 0;
     width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+footer p{
+    padding-top: 10px;
+    margin-bottom: 10px;
 }
 
 main{
@@ -34,10 +40,6 @@ main{
     justify-content: center;
     padding-top: 18px;
     background-color: white;
-}
-
-.addNumber{
-    min-width: 100px;
 }
 
 .addBtn{
@@ -58,6 +60,40 @@ i{
     font-size: 40px;
 }
 
-tr:hover{
+td{
+    vertical-align: middle;
+}
+
+td i{
+    font-size: 20px;
+    margin-right: 15px;
+    padding: 2px;
+}
+
+td i:hover{
     background-color: lightgrey;
+}
+
+table{
+    min-width: 730px;
+}
+
+@media screen and (max-width: 1000px) {
+    .addingDiv{
+        flex-direction: column;
+    }
+
+    .addingDiv select{
+        width: 90%;
+        margin: auto;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .addingDiv div{
+        margin: auto;
+        margin-top: 10px;
+        margin-left: 5%;
+        width: 90%;
+    }
 }
