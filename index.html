@@ -17,22 +17,20 @@
     <main>
         <h1>Termék hozzáadása</h1>
         <div class="addingDiv">
-            <select class="form-select" aria-label="Default select example">
+            <select id="kategoriaSelect" class="form-select" aria-label="Default select example">
                 <option selected>Kategória..</option>
-                <option ng-repeat="kategoria in kategoriak">{{kategoria}}</option>
             </select>
 
-            <select class="form-select" aria-label="Default select example">
+            <select id="termekSelect" class="form-select" aria-label="Default select example">
                 <option selected>Termék..</option>
-                <option></option>
             </select>
 
             <div class="form-floating mb-3 me-2">
-                <input style="min-width: 120px" type="number" class="form-control" id="mennyiseg" placeholder="">
+                <input style="min-width: 120px" type="number" class="form-control" id="mennyisegUpDown" min="1" placeholder="">
                 <label for="mennyiseg">Mennyiség</label>
             </div>
 
-            <button type="button" class="btn add"><i class="bi bi-plus-square"></i></button>
+            <button type="button" class="btn addBtn"><i class="bi bi-plus-square"></i></button>
         </div>
 
         <br>
@@ -50,19 +48,23 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                <tr ng-repeat="currentTermek in lista">
+                    <td>{{currentTermek.kategoria}}</td>
+                    <td>{{currentTermek.neve}}</td>
+                    <td>{{currentTermek.mennyiseg}}</td>
+                    <td>{{currentTermek.egysegar}}</td>
+                    <td>{{currentTermek.egysegar * currentTermek.mennyiseg}}</td>
+                    <td>DeleteDtn ide</td>
                 </tr>
             </tbody>
         </table>
     </main>
 
-    <footer>{{author}}</footer>
+    <footer>
+        <button class="saveBtn">Mentés</button>
+
+        <button class="deleteBtn">Lista törlése</button>
+    </footer>
 
     <script src="Assets/js/angular.min.js"></script>
     <script src="Assets/js/axios.min.js"></script>
