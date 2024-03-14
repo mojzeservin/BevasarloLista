@@ -27,29 +27,6 @@ app.run(function($rootScope)
 
     $rootScope.lista = [];
 
-    $rootScope.Delete = function(id){
-        $rootScope.lista.forEach(item => {
-            if (id == item.id) {
-                $rootScope.lista.splice($rootScope.lista.indexOf(item), 1)
-            }
-        })
-
-        Update();
-    };
-
-    $rootScope.Modify = function(id){
-        let amount = Number(window.prompt("Mennyiség módosítása erre:"));
-        if (amount >= 1) {
-            $rootScope.lista.forEach(item => {
-                if (id == item.id) {
-                    $rootScope.lista[$rootScope.lista.indexOf(item)].mennyiseg = amount;
-                }
-            })
-        }
-
-        Update();
-    };
-
     axios.get("http://localhost:3000").then(res => {
         $rootScope.termekek = res.data;
 
@@ -95,7 +72,6 @@ app.run(function($rootScope)
         if (kategoriaSelect.selectedIndex != 0 && termekSelect.selectedIndex != 0 && mennyisegUpDown.value > 0)
         {
             let termek = {
-                id: $rootScope.lista.length,
                 kategoria: kategoriaSelect.options[kategoriaSelect.selectedIndex].text,
                 neve: termekSelect.options[termekSelect.selectedIndex].text,
                 mennyiseg: Number(mennyisegUpDown.value),
@@ -129,12 +105,14 @@ app.run(function($rootScope)
     loadBtn.addEventListener("click", () => {
         $rootScope.lista = JSON.parse(localStorage.getItem("BevasarloLista"));
 
+        $rootScope.$apply();
         Update();
     });
 
     deleteBtn.addEventListener("click", () => {
         $rootScope.lista = [];
         
+        $rootScope.$apply();
         Update();
     });
 
@@ -144,11 +122,6 @@ app.run(function($rootScope)
         $rootScope.lista.forEach(item => {
             $rootScope.arakOsszege += item.mennyiseg * item.egysegar;
         });
-
-        // ID refresher
-        for (let index = 0; index < $rootScope.lista.length; index++) {
-            $rootScope.lista[index].id = index;
-        }
 
         $rootScope.$apply();
     }
