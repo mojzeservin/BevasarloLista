@@ -64,7 +64,7 @@
                     <td>{{currentTermek.mennyiseg}}</td>
                     <td>{{currentTermek.egysegar}}</td>
                     <td>{{currentTermek.egysegar * currentTermek.mennyiseg}}</td>
-                    <td><i class="bi bi-pencil"></i><i class="bi bi-trash"></i></td>
+                    <td><i class="bi bi-pencil" ng-click="Modify(currentTermek.id)"></i><i class="bi bi-trash" ng-click="Delete(currentTermek.id)"></i></td>
                 </tr>
             </tbody>
         </table>
