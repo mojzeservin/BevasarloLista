@@ -1,10 +1,10 @@
 body{
-    background-color: silver;
+    background-color: rgb(209, 209, 209);
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 header{
-    background-color: slategray;
+    background-color: rgb(95, 120, 145);
     padding: 20px;
     color:  white;
     text-shadow: 0 0 3px black;
@@ -40,13 +40,16 @@ main{
     justify-content: center;
     padding-top: 18px;
     background-color: white;
+    box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.75);
 }
 
 .addBtn{
     padding-top: 0px;
     height: 65px;
 }
-
+.addBtn:hover{
+    background-color: lightgray;
+}
 .form-select{
     height: 60px;
     width: 200px;
@@ -76,6 +79,7 @@ td i:hover{
 
 table{
     min-width: 730px;
+    box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.75);
 }
 
 @media screen and (max-width: 1000px) {
@@ -96,4 +100,7 @@ table{
         margin-left: 5%;
         width: 90%;
     }
+}
+h1{
+    text-shadow: 0px 0px 5px #FFFFFF;
 }
